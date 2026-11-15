@@ -1,5 +1,6 @@
 #print("test!! (commit-ability test)")
 #print("test 2 commit-ability test!!")
+print("COMMIT TEST 3!!!!)")
 import time
 
 name = input("Name your character:  ")
@@ -36,7 +37,7 @@ t.write(name, align = "center", font = ("Impact", 20, "underline"))
 def a_key():
     global a 
     a = "true"
-    a.write("star")
+    a.write("star", align = "center", font = ("Verdana", 15, "normal"))
     time.sleep(1.5)
     a.clear
     a.color("blue")
@@ -54,13 +55,13 @@ def a_key():
     a.endfill()
     time.sleep(1.5)
 
-screen.onkey(a, "a")
+screen.onkey(a_key, "a")
 screen.listen()
     
 def b_key():
     global b 
     b = "true"
-    b.write("bear")
+    b.write("bear", align = "center", font = ("Verdana", 15, "normal"))
     b.goto(0, -100) #head
     b.color("brown")
     b.dot(50)
@@ -75,13 +76,13 @@ def b_key():
     b.dot(5)
     time.sleep(1.5)
 
-screen.onkey(b, "b")
+screen.onkey(b_key, "b")
 screen.listen()
 
 def c_key():
     global c 
     c = "true"
-    c.write("Candles!")
+    c.write("Candles!", align = "center", font = ("Verdana", 15, "normal"))
     time.sleep(1.5)
     c.clear()
     screen.bgcolor("black")
@@ -121,9 +122,9 @@ def c_key():
     c.pendown()
     c.fillcolor("white")
     c.beginfill()
-    c.
 
-
+screen.onkey(c_key, "c")
+screen.listen()
 
 def p_key():
     global p 
@@ -134,7 +135,7 @@ def p_key():
     p.color("black")
     p.goto(-100, -220)
     p.dot(20)
-    p.goto(-50, 3
+    p.goto(-50, 3)
     p.color("blue")
     p.dot(6)
     p.color("yellow")
@@ -145,7 +146,7 @@ def p_key():
     p.dot(14)
     time.sleep(1.5)
 
-screen.onkey(p, "p")
+screen.onkey(p_key, "p")
 screen.listen()
 
 
