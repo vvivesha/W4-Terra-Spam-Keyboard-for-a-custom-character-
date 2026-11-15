@@ -1,16 +1,19 @@
 #print("test!! (commit-ability test)")
 #print("test 2 commit-ability test!!")
 print("COMMIT TEST 3!!!!)")
+import random
 import time
 
 name = input("Name your character:  ")
 time.sleep(0.2)
 print("Hello, " + name)
 time.sleep(0.05)
-print("---")
+print("---")    
 time.sleep(0.05)
 print("===")
-itme.sleep(0.05)
+time.sleep(0.05)
+global delay
+global sleep
 delay = input("Delay drawings?")
 if delay == "y":
     sleep = 1.5
@@ -35,6 +38,7 @@ t = turtle.Turtle()
 a = turtle.Turtle()
 b = turtle.Turtle()
 c = turtle.Turtle()
+d = turtle.Turtle()
 
 t.showturtle()
 t.color("red")
@@ -45,7 +49,7 @@ def a_key(): #spikey triangles
     global a_status 
     a_status = "true"
     #a.write("star", align = "center", font = ("Verdana", 15, "normal"))
-    time.sleep(1.5)
+    time.sleep(sleep)
     a.clear
     a.color("blue")
     a.fillcolor("green")
@@ -69,6 +73,7 @@ def b_key(): #circular-nodes
     global b_status 
     b_status = "true"
     #b.write("bear", align = "center", font = ("Verdana", 15, "normal"))
+    time.sleep(sleep)
     b.goto(0, -100) #head
     b.color("brown")
     b.dot(50)
@@ -90,7 +95,7 @@ def c_key(): #rectangles
     global c_status 
     c_status = "true"
     #c.write("Candles!", align = "center", font = ("Verdana", 15, "normal"))
-    time.sleep(1.5)
+    time.sleep(sleep)  #used to be time.sleep(1.5)
     c.clear()
     screen.bgcolor("black")
     c.goto(-100, -200)
@@ -133,11 +138,44 @@ def c_key(): #rectangles
 screen.onkey(c_key, "c")
 screen.listen()
 
+#list for d-turtle:
+x_choices = [-10, -20, -30, -40, -45, 10, 20, 30, 40 ,50 ,45, 60, 90]
+z_location = random.choice(x_choices)
+y_choices = [20, 29, 23, 92, -91, -3, -5, -257, 283, -34 , -116, 200]
+y_location = random.choice(y_choices)
+def d_key():
+    global d_status
+    d_status = "true"
+   # d.write("something, idk")
+    time.sleep(sleep)
+    d.color("yellow")
+    for stars in range(3):
+        d.penup()
+        d.goto(x_location, y_location)
+        d.pendown()
+        d.fillcolor("yellow")
+        d.begin_fill()
+        d.forward(100) 
+        d.right(135)
+        d.forward(100)
+        d.right(115) #or 135
+        d.forward(100)
+        d.right(45)
+        d.forward(100)
+        d.right(45)
+        d.forward(100)
+        d.end_fill()
+
+screen.onkey(d_key, "d")
+screen.listen()
+
+
+
 def p_key():
     global p_status 
     p_status = "true"
-    p.write("Polka dots!", align = "center", font = ("Verdana", 15, "normal"))
-    time.sleep(1.5)
+   # p.write("Polka dots!", align = "center", font = ("Verdana", 15, "normal"))
+   # time.sleep(1.5)
     p.clear()
     p.color("black")
     p.goto(-100, -220)
