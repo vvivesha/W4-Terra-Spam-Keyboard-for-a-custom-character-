@@ -45,6 +45,7 @@ p_status = "false"
 
 import turtle
 screen = turtle.Screen()
+q0 = turtle.Turtle()
 q1 = turtle.Turtle()
 q2 = turtle.Turtle()
 p = turtle.Turtle()
@@ -58,11 +59,42 @@ e = turtle.Turtle()
 f - turtle.Turtle()
 g = turtle.Turtle()
 
-t.showturtle()
-t.color("red")
-t.forward(100)
-t.write(name, align = "center", font = ("Impact", 20, "underline"))
+q0.showturtle()
+q0.color("red")
+q0.forward(100)
+q0.write(name, align = "center", font = ("Impact", 20, "underline"))
 
+#list for ALL turtles' "randomized" coordinates:
+global y_location
+global x_location
+global x_choices
+global y_choices
+x_choices = [-10, -20, -30, -40, -45, 53, 28, 27, -94, 333, -333, 18, 10, 20, 30, 40 ,50 ,45, 60, 90]
+x_location = random.choice(x_choices)  #typo was z_location. There is no "z".
+y_choices = [20, 29, 23, 92, -91, -3, -5, -257, 283, 87, -11, -52, -220, 323, 49, -34, -34 , -116, 200]
+y_location = random.choice(y_choices)
+
+#random fillcolors:
+global colors
+global color_bank
+color_bank = ["blue", "green", "red", "purple", "white", "black", "yellow", "pink", "orange", "brown"]
+colors = random.choice(color_bank)
+
+#random direction (turning right):
+global direction
+global turn
+global degrees
+degrees = (0, 360)
+turn = random.choice(degrees)
+#direction = random.choice(turn)
+
+#move-by distance:
+global distance
+global move
+global distance_list
+distance_list = range(1, 250)
+move = random.choice(distance_list)
+#distance = random.choice(move)
 
 #list for one_key():
 global memory_game_script
@@ -70,9 +102,26 @@ global memory_prompt
 memory_game_script = ["Draw 3 TRIANGLES and 2 CIRCLES-- in that order.", "Draw 2 squares, a circle, and a square", "Draw 1 circle, 1 triangle, and 1 square.", "Draw 4 trianges", "Draw 2 rectangles and 1 square."]
 memory_prompt = random.choice(memory_game_script)
 
+#number_randomizer:
+global r_number
+r_number = random.choice(range(1, 200))
+
+def c_key():
+    c.penup()
+    c.goto(x_location, y_location)
+    c.dot(r_number)
+
 #minigames:
 def memory_game():
-    
+    q1.clear()
+    q0.penup()
+    q0.goto(-200, -200)
+    q0.write("r = rectangle, s = square, c = circle, t = triangle", align = "left", font = ("Courier New", 10, "underline"))
+    if activated == ["one_key()", "game_msg_2())", "c_key()", "r_key()", "s_key()", "t_key()"]:
+
+
+screen.onkey(c_key, "c")
+screen.listen()
 
 def one_key():
     global one_status
@@ -141,37 +190,16 @@ def two_key():
 screen.onkey(two_key, "2")
 screen.listen
 
-#list for ALL turtles' "randomized" coordinates:
-global y_location
-global x_location
-global x_choices
-global y_choices
-x_choices = [-10, -20, -30, -40, -45, 53, 28, 27, -94, 333, -333, 18, 10, 20, 30, 40 ,50 ,45, 60, 90]
-x_location = random.choice(x_choices)  #typo was z_location. There is no "z".
-y_choices = [20, 29, 23, 92, -91, -3, -5, -257, 283, 87, -11, -52, -220, 323, 49, -34, -34 , -116, 200]
-y_location = random.choice(y_choices)
+#moved globalized variables from here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-#random fillcolors:
-global colors
-global color_bank
-color_bank = ["blue", "green", "red", "purple", "white", "black", "yellow", "pink", "orange", "brown"]
-colors = random.choice(color_bank)
 
-#random direction (turning right):
-global direction
-global turn
-global degrees
-degrees = (0, 360)
-turn = random.choice(degrees)
-#direction = random.choice(turn)
 
-#move-by distance:
-global distance
-global move
-global distance_list
-distance_list = range(1, 250)
-move = random.choice(distance_list)
-#distance = random.choice(move)
+
+
+
+
+
+
 
 def a_key(): #spikey triangles
     global a_status 
