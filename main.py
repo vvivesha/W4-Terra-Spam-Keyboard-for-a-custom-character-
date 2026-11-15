@@ -23,6 +23,7 @@ if delay == "n":
     sleep = 0
 print("============================================")
 global game
+global suppress_1
 game = input("Would you like to enable minigames?  (y/n)")
 if game == "no":
     suppress_1 = "true"
@@ -38,6 +39,7 @@ c_status = "false"
 d_status = "false"
 e_status = "false"
 f_status = "false"
+g_status = "false"
 
 p_status = "false"
 
@@ -53,11 +55,24 @@ b = turtle.Turtle()
 c = turtle.Turtle()
 d = turtle.Turtle()
 e = turtle.Turtle()
+f - turtle.Turtle()
+g = turtle.Turtle()
 
 t.showturtle()
 t.color("red")
 t.forward(100)
 t.write(name, align = "center", font = ("Impact", 20, "underline"))
+
+
+#list for one_key():
+global memory_game_script
+global memory_prompt
+memory_game_script = ["Draw 3 TRIANGLES and 2 CIRCLES-- in that order.", "Draw 2 squares, a circle, and a square", "Draw 1 circle, 1 triangle, and 1 square.", "Draw 4 trianges", "Draw 2 rectangles and 1 square."]
+memory_prompt = random.choice(memory_game_script)
+
+#minigames:
+def memory_game():
+    
 
 def one_key():
     global one_status
@@ -67,40 +82,49 @@ def one_key():
     time.sleep(1)
     q1.clear()
     time.sleep(0.5)
+    q1.color("black")
     q1.write("Let\'s play a... Memory Game!", align = "center", font = ("Courier New", 16, "underline"))
     time.sleep(1)
     q1.clear()
     screen.bgcolor("black")
-    q1.write("Draw 3 RED TRIANGLES and 2 BLUE CIRCLES-- in that order.")
+    q1.color("white")
+    q1.write(memory_prompt)
     time.sleep(1.5)
-    for countdown in range(3):
-        q1.goto(0, -25)
-        countdown -= 1
-        q1.write(countdown, align = "center", font = ("Impact", 20, "bold"))
-        time.sleep(1)
-        q1.clear()
-        q1.goto(0, 0)
-        q1.write("Draw 3 RED TRIANGLES and 2 BLUE CIRCLES-- in that order.")
-    q1.clear()
-    time.sleep(1)
-    q1.goto(0, 0)
-    q1.write("Draw 3 RED TRIANGLES and 2 BLUE CIRCLES-- in that order.")
-    q1.goto(0, -30)
-    q1. write("GOOOOO!", align = "center", font = ("Impact", 30, "underline"))
+   # for countdown in range(3):
+    #    q1.goto(0, -25)
+    #    countdown -= 1
+    #    q1.write(countdown, align = "center", font = ("Impact", 20, "bold"))
+    #    q1.clear()
+    #    q1.goto(0, 0)
+    #    q1.write("Draw 3 RED TRIANGLES and 2 BLUE CIRCLES-- in that order.")
+    #    time.sleep(1)
+    
+    #q1.clear()
+    #time.sleep(1)
+    #q1.goto(0, 0)
+    #q1.write("Draw 3 RED TRIANGLES and 2 BLUE CIRCLES-- in that order.")
+    #q1.goto(0, -30)
+    #q1. write("GOOOOO!", align = "center", font = ("Impact", 30, "underline"))
+    q1.goto(0, -20)
+    q1.color("green")
+    q1.write("Press r for rectangle, t for triangle, s for a square, or c for a circle.", align = "left", font = ("Verdana", 15, "normal"))
     global membory_game
     memory_game = "true"
 
+if memory_game == "true":
+    memory_game()
 
-if suppress_1 == "false":
-    time.sleep(0.5)
-    q1.penup()
-    q1.goto(0, 50)
-    q1.pendown()
-    q1.write("Would you like to play a game?", align = "center", font = ("Courier New", 14, "bold"))
-    q1.penup()
-    q1.goto(0, 75)
-    q1.pendown()
-    q1.write("Press 1 on your keyboard to play Memory Game!")
+def game_msg_2():
+    if suppress_1 == "false":
+        time.sleep(0.5)
+        q1.penup()
+        q1.goto(0, 50)
+        q1.pendown()
+        q1.write("Would you like to play a game?", align = "center", font = ("Courier New", 14, "bold"))
+        q1.penup()
+        q1.goto(0, 75)
+        q1.pendown()
+        q1.write("Press 1 on your keyboard to play Memory Game!")
 
 screen.onkey(one_key, "1")
 screen.listen()
@@ -195,49 +219,49 @@ def b_key(): #circular-nodes
 screen.onkey(b_key, "b")
 screen.listen()
 
-def c_key(): #rectangles
+def g_key(): #rectangles
     global c_status 
-    c_status = "true"
-    #c.write("Candles!", align = "center", font = ("Verdana", 15, "normal"))
+    g_status = "true"
+    #g.write("Candles!", align = "center", font = ("Verdana", 15, "normal"))
     time.sleep(sleep)  #used to be time.sleep(1.5)
-    c.clear()
+    g.clear()
     screen.bgcolor("black")
-    c.goto(-100, -200)
-    c.pendown()
-    c.fillcolor("white")
-    c.begin_fill()
-    c.forward(20)
-    c.right(90)
-    c.forward(100)
-    c.right(90)
-    c.forward(20)
-    c.right(90)
-    c.forward(100)
-    c.end_fill()
-    c.penup()
-    c.setheading(0)
-    c.goto(-100, -200)
-    c.right(90)
-    c.forward(100)
-    c.left(90)
-    c.pendown()
-    c.fillcolor("yellow")
-    c.begin_fill()
-    c.forward(25) #start candle 2
-    c.left(90)
-    c.forward(73)
-    c.left(90)
-    c.forward(8)
-    c.left(90)
-    c.forward(73)
-    c.left(90)
-    c.forward(8)
-    c.end_fill()
-    c.penup()
-    c.goto(-75, -80)
-    c.pendown()
-    #c.fillcolor("white")
-    #c.begin_fill()
+    g.goto(-100, -200)
+    g.pendown()
+    g.fillcolor("white")
+    g.begin_fill()
+    g.forward(20)
+    g.right(90)
+    g.forward(100)
+    g.right(90)
+    g.forward(20)
+    g.right(90)
+    g.forward(100)
+    g.end_fill()
+    g.penup()
+    g.setheading(0)
+    g.goto(-100, -200)
+    g.right(90)
+    g.forward(100)
+    g.left(90)
+    g.pendown()
+    g.fillcolor("yellow")
+    g.begin_fill()
+    g.forward(25) #start candle 2
+    g.left(90)
+    g.forward(73)
+    g.left(90)
+    g.forward(8)
+    g.left(90)
+    g.forward(73)
+    g.left(90)
+    g.forward(8)
+    g.end_fill()
+    g.penup()
+    g.goto(-75, -80)
+    g.pendown()
+    #g.fillcolor("white")
+    #g.begin_fill()
 
 screen.onkey(c_key, "c")
 screen.listen()
