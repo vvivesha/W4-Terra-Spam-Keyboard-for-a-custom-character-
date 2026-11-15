@@ -9,6 +9,13 @@ print("Hello, " + name)
 time.sleep(0.05)
 print("---")
 time.sleep(0.05)
+print("===")
+itme.sleep(0.05)
+delay = input("Delay drawings?")
+if delay == "y":
+    sleep = 1.5
+if delay == "n":
+    sleep = 0
 print("Launching interactive window... ")
 time.sleep(2)
 
