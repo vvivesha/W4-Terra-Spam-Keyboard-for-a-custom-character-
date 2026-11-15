@@ -39,11 +39,44 @@ a = turtle.Turtle()
 b = turtle.Turtle()
 c = turtle.Turtle()
 d = turtle.Turtle()
+e = turtle.Turtle()
 
 t.showturtle()
 t.color("red")
 t.forward(100)
 t.write(name, align = "center", font = ("Impact", 20, "underline"))
+
+#list for ALL turtles' "randomized" coordinates:
+global y_location
+global x_location
+global x_choices
+global y_choices
+x_choices = [-10, -20, -30, -40, -45, 53, 28, 27, -94, 333, -333, 18, 10, 20, 30, 40 ,50 ,45, 60, 90]
+x_location = random.choice(x_choices)  #typo was z_location. There is no "z".
+y_choices = [20, 29, 23, 92, -91, -3, -5, -257, 283, 87, -11, -52, -220, 323, 49, -34, -34 , -116, 200]
+y_location = random.choice(y_choices)
+
+#random fillcolors:
+global colors
+global color_bank
+color_bank = ["blue", "green", "red", "purple", "white", "black", "yellow", "pink", "orange", "brown"]
+colors = random.choice(color_bank)
+
+#random direction (turning right):
+global direction
+global turn
+global degrees
+degrees = (0, 360)
+turn = random,choice(degrees)
+direction = random.choice(turn)
+
+#move-by distance:
+global distance
+global move
+global distance_list
+distance_list = range(1, 250)
+move = random.choice(distance_list)
+distance = random.choice(move)
 
 def a_key(): #spikey triangles
     global a_status 
@@ -138,15 +171,6 @@ def c_key(): #rectangles
 screen.onkey(c_key, "c")
 screen.listen()
 
-#list for d-turtle:
-global y_location
-global x_location
-global x_choices
-global y_choices
-x_choices = [-10, -20, -30, -40, -45, 10, 20, 30, 40 ,50 ,45, 60, 90]
-x_location = random.choice(x_choices)  #typo was z_location. There is no "z".
-y_choices = [20, 29, 23, 92, -91, -3, -5, -257, 283, -34 , -116, 200]
-y_location = random.choice(y_choices)
 
 def d_key():  #failed star again lol
     global d_status
@@ -174,13 +198,69 @@ def d_key():  #failed star again lol
 screen.onkey(d_key, "d")
 screen.listen()
 
+def e_key():
+    global e_status
+    global colors
+    global color_bank
+    e_status = "true"
+    #e.write()
+    time.sleep(sleep)
+    e.clear()
+    e.penup()
+    e.fillcolor(colors)
+    #e.goto(x_location, y_location)
+    e.pendown()
+    e.begin_fill()
+    e.forward(50)
+    e.right(90)
+    e.forward(70)
+    e.right(90)
+    e.forward(50)
+    e.right(90)
+    e.forward(70)
+    e.penup()
+    e.end_fill()
+    e.goto(x_location, y_location)
+    e.fillcolor(colors)
+    e.begin_fill()
+    e.pendown()
+    e.forward(50) #hopefully a star
+    e.right(115)
+    e.forward(59)
+    e.right(115)
+    e.forward(50)
+    e.right(115)
+    e.forward(50)
+    e.right(115)
+    e.forward(50)
+    e.right(115)
+    e.forward(50)
+    e.right(115)
+    e.forward(50)
+    e.penup()
+    e.end_fill()
 
+screen.onkey(e_key, "e")
+screen.listen()
+
+def f_key():
+    global f_status
+    f_status = "true"
+    #f.write()
+    time.sleep(sleep)
+    f.penup()
+    f.goto(x_locaiton, y_location)
+    f.pendown()
+    f.fillcolor(colors)
+    f.begin_fill()
+    f.turn(turn)
+    f.forward(move)
 
 def p_key():
     global p_status 
     p_status = "true"
    # p.write("Polka dots!", align = "center", font = ("Verdana", 15, "normal"))
-   # time.sleep(1.5)
+    time.sleep(sleep)
     p.clear()
     p.color("black")
     p.goto(-100, -220)
