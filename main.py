@@ -35,11 +35,15 @@ time.sleep(2)
 one_status = "false"
 a_status = "false"
 b_status = "false"
-c_status = "false"
 d_status = "false"
 e_status = "false"
 f_status = "false"
 g_status = "false"
+
+c_status = "false"
+r_status = "false"
+s_status = "false"
+t_status = "false"
 
 p_status = "false"
 
@@ -50,10 +54,14 @@ q1 = turtle.Turtle()
 q2 = turtle.Turtle()
 p = turtle.Turtle()
 q = turtle.Turtle()
+
+c = turtle.Turtle()
+r = turtle.Turtle()
+s = turtle.Turtle()
 t = turtle.Turtle()
+
 a = turtle.Turtle()
 b = turtle.Turtle()
-c = turtle.Turtle()
 d = turtle.Turtle()
 e = turtle.Turtle()
 f = turtle.Turtle()
@@ -109,12 +117,16 @@ global r1_number
 r1_number = random.choice(range(1,200))
 
 def c_key(): #circle
+    global c_status
+    c_status = "true"
     c.penup()
     c.goto(x_location, y_location)
     c.pendown()
     c.dot(r_number, colors)
 
 def r_key(): #rectangle
+    global r_status
+    r_status = "true"
     r.penup()
     r.goto(x_location, y_location)
     r.fillcolor(colors)
@@ -135,7 +147,27 @@ def r_key(): #rectangle
     r.penup()
     r.end_fill()
 
+def s_key(): #square
+    global s_status
+    s_status = "true"
+    s.penup()
+    s.goto(x_location, Y_location)
+    s.pendown()
+    s.fillcolor(colors)
+    s.begin_fill()
+    global r_number
+    side = r_number
+    s.forward(side)
+    s.right(90)
+    s.forward(side)
+    s.right(90)
+    s.forward(side)
+    s.right(90)
+    s.forward(side)
 
+def t_key():
+    global t_status
+    t_status = "true"
 
 #minigames:
 def memory_game():
