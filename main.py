@@ -56,7 +56,7 @@ b = turtle.Turtle()
 c = turtle.Turtle()
 d = turtle.Turtle()
 e = turtle.Turtle()
-f - turtle.Turtle()
+f = turtle.Turtle()
 g = turtle.Turtle()
 
 q0.showturtle()
@@ -105,11 +105,37 @@ memory_prompt = random.choice(memory_game_script)
 #number_randomizer:
 global r_number
 r_number = random.choice(range(1, 200))
+global r1_number
+r1_number = random.choice(range(1,200))
 
-def c_key():
+def c_key(): #circle
     c.penup()
     c.goto(x_location, y_location)
-    c.dot(r_number)
+    c.pendown()
+    c.dot(r_number, colors)
+
+def r_key(): #rectangle
+    r.penup()
+    r.goto(x_location, y_location)
+    r.fillcolor(colors)
+    r.begin_fill()
+    r.pendown()
+    global r_number
+    global length
+    global width
+    width = r1_number
+    length = r_number
+    r.forward(length)
+    r.right(90)
+    r.forward(width)
+    r.right(90)
+    r.forward(length)
+    r.right(90)
+    r.forward(width)
+    r.penup()
+    r.end_fill()
+
+
 
 #minigames:
 def memory_game():
@@ -117,11 +143,15 @@ def memory_game():
     q0.penup()
     q0.goto(-200, -200)
     q0.write("r = rectangle, s = square, c = circle, t = triangle", align = "left", font = ("Courier New", 10, "underline"))
-    if activated == ["one_key()", "game_msg_2())", "c_key()", "r_key()", "s_key()", "t_key()"]:
+   # if activated == ["one_key()", "game_msg_2())", "c_key()", "r_key()", "s_key()", "t_key()"]:
 
 
 screen.onkey(c_key, "c")
 screen.listen()
+
+screen.onkey(r_key, "r")
+screen.listen()
+
 
 def one_key():
     global one_status
@@ -188,7 +218,7 @@ def two_key():
 
 
 screen.onkey(two_key, "2")
-screen.listen
+screen.listen()
 
 #moved globalized variables from here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
