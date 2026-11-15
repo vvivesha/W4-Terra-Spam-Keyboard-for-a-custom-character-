@@ -139,11 +139,16 @@ screen.onkey(c_key, "c")
 screen.listen()
 
 #list for d-turtle:
+global y_location
+global x_location
+global x_choices
+global y_choices
 x_choices = [-10, -20, -30, -40, -45, 10, 20, 30, 40 ,50 ,45, 60, 90]
-z_location = random.choice(x_choices)
+x_location = random.choice(x_choices)  #typo was z_location. There is no "z".
 y_choices = [20, 29, 23, 92, -91, -3, -5, -257, 283, -34 , -116, 200]
 y_location = random.choice(y_choices)
-def d_key():
+
+def d_key():  #failed star again lol
     global d_status
     d_status = "true"
    # d.write("something, idk")
