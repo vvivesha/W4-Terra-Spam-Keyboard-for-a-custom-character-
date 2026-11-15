@@ -11,11 +11,12 @@ time.sleep(0.05)
 print("Launching interactive window... ")
 time.sleep(2)
 
-a= "false"
+a = "false"
 b = "false"
 c = "false"
 d = "false"
 e = "false"
+f = "false"
 
 p = "false"
 
@@ -32,8 +33,9 @@ t.color("red")
 t.forward(100)
 t.write(name, align = "center", font = ("Impact", 20, "underline"))
 
-def a():
-    global a = "true"
+def a_key():
+    global a 
+    a = "true"
     a.write("star")
     time.sleep(1.5)
     a.clear
@@ -55,8 +57,9 @@ def a():
 screen.onkey(a, "a")
 screen.listen()
     
-def b():
-    global b = "true"
+def b_key():
+    global b 
+    b = "true"
     b.write("bear")
     b.goto(0, -100) #head
     b.color("brown")
@@ -75,8 +78,9 @@ def b():
 screen.onkey(b, "b")
 screen.listen()
 
-def c():
-    global c = "true"
+def c_key():
+    global c 
+    c = "true"
     c.write("Candles!")
     time.sleep(1.5)
     c.clear()
@@ -121,8 +125,9 @@ def c():
 
 
 
-def p():
-    global p = "true"
+def p_key():
+    global p 
+    p = "true"
     p.write("Polka dots!")
     time.sleep(1.5)
     p.clear()
