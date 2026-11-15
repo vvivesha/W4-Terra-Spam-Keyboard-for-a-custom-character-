@@ -11,11 +11,21 @@ time.sleep(0.05)
 print("Launching interactive window... ")
 time.sleep(2)
 
+a= "false"
+b = "false"
+c = "false"
+d = "false"
+e = "false"
+
+p = "false"
+
 import turtle
+screen = turtle.Screen()
 p = turtle.Turtle()
 t = turtle.Turtle()
 a = turtle.Turtle()
 b = turtle.Turtle()
+c = turtle.Turtle()
 
 t.showturtle()
 t.color("red")
@@ -23,6 +33,7 @@ t.forward(100)
 t.write(name, align = "center", font = ("Impact", 20, "underline"))
 
 def a():
+    global a = "true"
     a.write("star")
     time.sleep(1.5)
     a.clear
@@ -41,10 +52,11 @@ def a():
     a.endfill()
     time.sleep(1.5)
 
-turtle.Screen().onkey(a, "a")
-turtle.Screen().listen()
+screen.onkey(a, "a")
+screen.listen()
     
 def b():
+    global b = "true"
     b.write("bear")
     b.goto(0, -100) #head
     b.color("brown")
@@ -60,10 +72,57 @@ def b():
     b.dot(5)
     time.sleep(1.5)
 
-turtle.Screen().onkey(b, "b")
-turtle.Screen().listen()
+screen.onkey(b, "b")
+screen.listen()
+
+def c():
+    global c = "true"
+    c.write("Candles!")
+    time.sleep(1.5)
+    c.clear()
+    screen.bgcolor("black")
+    c.goto(-100, -200)
+    c.pendown()
+    c.fillcolor("white")
+    c.beginfill()
+    c.forward(20)
+    c.right(90)
+    c.forward(100)
+    c.right(90)
+    c.forward(20)
+    c.right(90)
+    c.forward(100)
+    c.endfill()
+    c.penup()
+    c.setheading(0)
+    c.goto(-100, -200)
+    c.right(90)
+    c.forward(100)
+    c.left(90)
+    c.pendown()
+    c.fillcolor("yellow")
+    c.beginfill()
+    c.forward(25) #start candle 2
+    c.left(90)
+    c.forward(73)
+    c.left(90)
+    c.forward(8)
+    c.left(90)
+    c.forward(73)
+    c.left(90)
+    c.forward(8)
+    c.endfill()
+    c.penup()
+    c.goto(-75, -80)
+    c.pendown()
+    c.fillcolor("white")
+    c.beginfill()
+    c.
+
+
 
 def p():
+    global p = "true"
     p.write("Polka dots!")
     time.sleep(1.5)
     p.clear()
@@ -81,8 +140,8 @@ def p():
     p.dot(14)
     time.sleep(1.5)
 
-turtle.Screen().onkey(p, "p")
-turtle.Screen().listen()
+screen.onkey(p, "p")
+screen.listen()
 
 
 
