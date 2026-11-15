@@ -85,8 +85,10 @@ y_location = random.choice(y_choices)
 #random fillcolors:
 global colors
 global color_bank
+global pick_color
 color_bank = ["blue", "green", "red", "purple", "white", "black", "yellow", "pink", "orange", "brown"]
-colors = random.choice(color_bank)
+pick_color = random.choice(color_bank)
+colors = pick_color
 
 #random direction (turning right):
 global direction
@@ -112,9 +114,14 @@ memory_prompt = random.choice(memory_game_script)
 
 #number_randomizer:
 global r_number
-r_number = random.choice(range(1, 200))
+global pick_r_number
+pick_r_number = random.choice(range(1, 200))
+r_number = pick_r_number
 global r1_number
-r1_number = random.choice(range(1,200))
+global pick_r1_number
+pick_r1_number = random.choice(range(1,200))
+r1_number = pick_r1_number
+
 
 def c_key(): #circle
     global c_status
@@ -147,11 +154,13 @@ def r_key(): #rectangle
     r.penup()
     r.end_fill()
 
+global s_range
+s_range = random.choice(range(-200,200))
 def s_key(): #square
     global s_status
     s_status = "true"
     s.penup()
-    s.goto(x_location, Y_location)
+    s.goto(s_range, s_range)
     s.pendown()
     s.fillcolor(colors)
     s.begin_fill()
@@ -182,6 +191,12 @@ screen.onkey(c_key, "c")
 screen.listen()
 
 screen.onkey(r_key, "r")
+screen.listen()
+
+screen.onkey(t_key, "t")
+screen.listen()
+
+screen.onkey(s_key, "s")
 screen.listen()
 
 
