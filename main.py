@@ -3,6 +3,7 @@
 print("COMMIT TEST 3!!!!)")
 import random
 import time
+countdown = 3
 
 name = input("Name your character:  ")
 time.sleep(0.2)
@@ -19,9 +20,17 @@ if delay == "y":
     sleep = 1.5
 if delay == "n":
     sleep = 0
+print("============================================")
+global game
+game = input("Would you like to enable minigames?  (y/n)")
+if game == "no":
+    suppress_1 = "true"
+if game == "yes":
+    suppress_1 = "false"
 print("Launching interactive window... ")
 time.sleep(2)
 
+one_status = "false"
 a_status = "false"
 b_status = "false"
 c_status = "false"
@@ -33,7 +42,9 @@ p_status = "false"
 
 import turtle
 screen = turtle.Screen()
+q1 = turtle.Trutle()
 p = turtle.Turtle()
+q = turtle.Turtle()
 t = turtle.Turtle()
 a = turtle.Turtle()
 b = turtle.Turtle()
@@ -45,6 +56,52 @@ t.showturtle()
 t.color("red")
 t.forward(100)
 t.write(name, align = "center", font = ("Impact", 20, "underline"))
+
+def one_key():
+    global one_status
+    global countdown
+    one_status = "true"
+    q1.penup()
+    time.sleep(1)
+    q1.clear()
+    time.sleep(0.5)
+    q1.write("Let\'s play a... Memory Game!", align = "center", font = ("Courier New", 16, "underline"))
+    time.sleep(1)
+    q1.clear()
+    screen.bgcolor("black")
+    q1.write("Draw 3 RED TRIANGLES and 2 BLUE CIRCLES-- in that order.")
+    time.sleep(1.5)
+    for countdown in range(3):
+        q1.goto(0, -25)
+        countdown -= 1
+        q1.write(countdown, align = "center", font = ("Impact", 20, "bold"))
+        time.sleep(1)
+        q1.clear()
+        q1.goto(0, 0)
+        q1.write("Draw 3 RED TRIANGLES and 2 BLUE CIRCLES-- in that order.")
+    q1.clear()
+    time.sleep(1)
+    q1.goto(0, 0)
+    q1.write("Draw 3 RED TRIANGLES and 2 BLUE CIRCLES-- in that order.")
+    q1.goto(0, -30)
+    q1. write("GOOOOO!", align = "center", font = ("Impact", 30, "underline"))
+    global membory_game
+    memory_game = "true"
+
+
+if suppress_1 == "false":
+    time.sleep(0.5)
+    q1.penup()
+    q1.goto(0, 50)
+    q1.pendown()
+    q1.write("Would you like to play a game?", align = "center", font = ("Courier New", 14, "bold"))
+    q1.penup()
+    q1.goto(0, 75)
+    q1.pendown()
+    q1.write("Press 1 on your keyboard to play Memory Game!")
+
+screen.onkey(one_key, "1")
+
 
 #list for ALL turtles' "randomized" coordinates:
 global y_location
@@ -67,8 +124,8 @@ global direction
 global turn
 global degrees
 degrees = (0, 360)
-turn = random,choice(degrees)
-direction = random.choice(turn)
+turn = random.choice(degrees)
+#direction = random.choice(turn)
 
 #move-by distance:
 global distance
@@ -76,7 +133,7 @@ global move
 global distance_list
 distance_list = range(1, 250)
 move = random.choice(distance_list)
-distance = random.choice(move)
+#distance = random.choice(move)
 
 def a_key(): #spikey triangles
     global a_status 
