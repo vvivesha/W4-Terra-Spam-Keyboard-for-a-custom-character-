@@ -12,14 +12,14 @@ time.sleep(0.05)
 print("Launching interactive window... ")
 time.sleep(2)
 
-a = "false"
-b = "false"
-c = "false"
-d = "false"
-e = "false"
-f = "false"
+a_status = "false"
+b_status = "false"
+c_status = "false"
+d_status = "false"
+e_status = "false"
+f_status = "false"
 
-p = "false"
+p_status = "false"
 
 import turtle
 screen = turtle.Screen()
@@ -34,15 +34,15 @@ t.color("red")
 t.forward(100)
 t.write(name, align = "center", font = ("Impact", 20, "underline"))
 
-def a_key():
-    global a 
-    a = "true"
-    a.write("star", align = "center", font = ("Verdana", 15, "normal"))
+def a_key(): #spikey triangles
+    global a_status 
+    a_status = "true"
+    #a.write("star", align = "center", font = ("Verdana", 15, "normal"))
     time.sleep(1.5)
     a.clear
     a.color("blue")
     a.fillcolor("green")
-    a.beginfill()
+    a.begin_fill()
     a.forward(50)
     a.right(45)
     a.forward(50)
@@ -52,16 +52,16 @@ def a_key():
     a.forward(75)
     a.right(120)
     a.forward(75)
-    a.endfill()
+    a.end_fill()
     time.sleep(1.5)
 
 screen.onkey(a_key, "a")
 screen.listen()
     
-def b_key():
-    global b 
-    b = "true"
-    b.write("bear", align = "center", font = ("Verdana", 15, "normal"))
+def b_key(): #circular-nodes
+    global b_status 
+    b_status = "true"
+    #b.write("bear", align = "center", font = ("Verdana", 15, "normal"))
     b.goto(0, -100) #head
     b.color("brown")
     b.dot(50)
@@ -79,17 +79,17 @@ def b_key():
 screen.onkey(b_key, "b")
 screen.listen()
 
-def c_key():
-    global c 
-    c = "true"
-    c.write("Candles!", align = "center", font = ("Verdana", 15, "normal"))
+def c_key(): #rectangles
+    global c_status 
+    c_status = "true"
+    #c.write("Candles!", align = "center", font = ("Verdana", 15, "normal"))
     time.sleep(1.5)
     c.clear()
     screen.bgcolor("black")
     c.goto(-100, -200)
     c.pendown()
     c.fillcolor("white")
-    c.beginfill()
+    c.begin_fill()
     c.forward(20)
     c.right(90)
     c.forward(100)
@@ -97,7 +97,7 @@ def c_key():
     c.forward(20)
     c.right(90)
     c.forward(100)
-    c.endfill()
+    c.end_fill()
     c.penup()
     c.setheading(0)
     c.goto(-100, -200)
@@ -106,7 +106,7 @@ def c_key():
     c.left(90)
     c.pendown()
     c.fillcolor("yellow")
-    c.beginfill()
+    c.begin_fill()
     c.forward(25) #start candle 2
     c.left(90)
     c.forward(73)
@@ -116,20 +116,20 @@ def c_key():
     c.forward(73)
     c.left(90)
     c.forward(8)
-    c.endfill()
+    c.end_fill()
     c.penup()
     c.goto(-75, -80)
     c.pendown()
-    c.fillcolor("white")
-    c.beginfill()
+    #c.fillcolor("white")
+    #c.begin_fill()
 
 screen.onkey(c_key, "c")
 screen.listen()
 
 def p_key():
-    global p 
-    p = "true"
-    p.write("Polka dots!")
+    global p_status 
+    p_status = "true"
+    p.write("Polka dots!", align = "center", font = ("Verdana", 15, "normal"))
     time.sleep(1.5)
     p.clear()
     p.color("black")
