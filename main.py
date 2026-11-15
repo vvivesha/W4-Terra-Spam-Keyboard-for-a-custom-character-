@@ -1,6 +1,7 @@
 #print("test!! (commit-ability test)")
 #print("test 2 commit-ability test!!")
-print("COMMIT TEST 3!!!!)")
+#print("COMMIT TEST 3!!!!)")
+print("Raised-By-This-Computer Sim")
 import random
 import time
 countdown = 3
@@ -42,7 +43,8 @@ p_status = "false"
 
 import turtle
 screen = turtle.Screen()
-q1 = turtle.Trutle()
+q1 = turtle.Turtle()
+q2 = turtle.Turtle()
 p = turtle.Turtle()
 q = turtle.Turtle()
 t = turtle.Turtle()
@@ -101,7 +103,19 @@ if suppress_1 == "false":
     q1.write("Press 1 on your keyboard to play Memory Game!")
 
 screen.onkey(one_key, "1")
+screen.listen()
 
+def two_key():
+    q2.penup()
+    q2.write("Blind Walk", align = "center", font = ("Courier New", 16, "underline"))
+    time.sleep(1)
+    q2.clear()
+    #q2.
+
+
+
+screen.onkey(two_key, "2")
+screen.listen
 
 #list for ALL turtles' "randomized" coordinates:
 global y_location
@@ -251,6 +265,8 @@ def d_key():  #failed star again lol
         d.right(45)
         d.forward(100)
         d.end_fill()
+        if suppress_1 == "false":
+            two_key()
 
 screen.onkey(d_key, "d")
 screen.listen()
