@@ -1,7 +1,11 @@
 #print("test!! (commit-ability test)")
 #print("test 2 commit-ability test!!")
 #print("COMMIT TEST 3!!!!)")
-print("Turtle Drawing Sandbox")
+print("(Turtle) Drawing Sandbox")
+print("========================")
+for gap in range(3):
+    print(" ")
+print("========================")
 import random
 import time
 countdown = 3
@@ -19,8 +23,11 @@ time.sleep(0.05)
 global delay
 global sleep
 word1 = input("What\'s your favorite letter? *press enter to skip these 3 questions*  ")
+print(" ")
 word2 = input("What\'s your favorite style? ")
+print(" ")
 word3 = input("What\'s your favorite plant? ")
+print(" ")
 #custom = input("Would you like to customize your name?   (y/n)")
 #if custom == "y":
 
@@ -38,11 +45,13 @@ if game == "no":
 if game == "yes":
     suppress_1 = "false"
 print("Launching interactive window... ")
-time.sleep(2)
+print("...") #added effect
+time.sleep(2) 
 
 #deleted "status" variables because they are now unnecessary
 import turtle
 screen = turtle.Screen()
+screen.title("(Turtle) Drawing Sandbox")
 q0 = turtle.Turtle()
 q1 = turtle.Turtle()
 q2 = turtle.Turtle()
