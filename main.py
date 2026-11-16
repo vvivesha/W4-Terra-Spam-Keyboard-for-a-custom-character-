@@ -5,6 +5,8 @@ print("Raised-By-This-Computer Sim")
 import random
 import time
 countdown = 3
+global trail_size
+trail_size = 5
 
 name = input("Name your character:  ")
 time.sleep(0.2)
@@ -38,28 +40,12 @@ if game == "yes":
 print("Launching interactive window... ")
 time.sleep(2)
 
-one_status = "false"
-a_status = "false"
-b_status = "false"
-d_status = "false"
-e_status = "false"
-f_status = "false"
-g_status = "false"
-
-c_status = "false"
-r_status = "false"
-s_status = "false"
-t_status = "false"
-
-p_status = "false"
-
+#deleted "status" variables because they are now unnecessary
 import turtle
 screen = turtle.Screen()
 q0 = turtle.Turtle()
 q1 = turtle.Turtle()
 q2 = turtle.Turtle()
-p = turtle.Turtle()
-q = turtle.Turtle()
 
 c = turtle.Turtle()
 r = turtle.Turtle()
@@ -147,10 +133,10 @@ move = random.choice(distance_list)
 #distance = random.choice(move)
 
 #list for one_key():
-global memory_game_script
+global quest_script
 global memory_prompt
-memory_game_script = ["Draw 3 TRIANGLES and 2 CIRCLES-- in that order.", "Draw 2 squares, a circle, and a square", "Draw 1 circle, 1 triangle, and 1 square.", "Draw 4 trianges", "Draw 2 rectangles and 1 square."]
-memory_prompt = random.choice(memory_game_script)
+quest_script = ["Draw 3 TRIANGLES and 2 CIRCLES-- in that order.", "Draw 2 squares, a circle, and a square", "Draw 1 circle, 1 triangle, and 1 square.", "Draw 4 trianges", "Draw 2 rectangles and 1 square."]
+memory_prompt = random.choice(quest_script)
 
 #number_randomizer:
 #global r_number
@@ -163,6 +149,15 @@ memory_prompt = random.choice(memory_game_script)
 #r1_number = pick_r1_number
 
 #customize user's turtle:
+
+q2.penup()
+q2.goto(-150, 150)
+q2.write("Use arrow keys to move!", align = "left", font = ("Verdana", 10, "normal"))
+q2.right(90)
+q2.forward(25)
+q2.write("Press i to go underwater", align = "left", font = ("Verdana", 10, "normal"))
+q2.forward(35)
+q2.write("Press v for a narrower trail and w for a wider trail", align = "left", font = ("Verdana", 10, "normal"))
 
 def word_1():
     user.penup()
@@ -194,6 +189,12 @@ def bg2(): #underwater
     a.dot(14, "white")
     a.goto(range1, range4)
     a.goto(range3, range1)
+    for turtles in range(8):
+        q1.penup()
+        q1.goto(random.choice(x_choices), random.choice(y_choices))
+        q1.shape("turtle")
+        q1.color("green")
+        q1.stamp()
 
 def u_invisible():
     user.clear()
@@ -241,8 +242,7 @@ def right():
     bot.left(90)
     bot.forward(20)
     user.penup()
-    time.sleep(3)
-    bot.clear()
+    bot.penup()
 
 #left
 def left():
@@ -258,8 +258,7 @@ def left():
     bot.left(90)
     bot.forward(20)
     user.penup()
-    time.sleep(3)
-    bot.clear()
+    bot.penup()
 
 #down
 def down():
@@ -275,8 +274,7 @@ def down():
     bot.left(90)
     bot.forward(20)
     user.penup()
-    time.sleep(3)
-    bot.clear()
+    bot.penup()
 
 #up
 def up():
@@ -292,8 +290,7 @@ def up():
     bot.left(90)
     bot.forward(20)
     user.penup()
-    time.sleep(3)
-    bot.clear()
+    bot.penup()
 
 screen.onkey(up, "Up")
 screen.listen()
@@ -301,18 +298,43 @@ screen.onkey(down, "Down")
 screen.onkey(left, "Left")
 screen.onkey(right, "Right")
 
+def faster():
+    bot.speed(0.0000001)
+    bot.color("orange")
+    bot.width(4)
+
+def slower():
+    bot.speed(1)
+    bot.color("pink")
+    bot.width(4)
+
+def smaller():
+    global trail_size
+    if trail_size == 1:
+        trailsize = 1
+    else:
+        trail_size -= 1
+        user.width(trail_size)
+
+def larger():
+    global trail_size
+    trail_size += 1
+    user.width(trail_size)
+
+screen.onkey(faster, "z")
+screen.listen()
+screen.onkey(slower, "x")
+screen.listen()
+screen.onkey(smaller, "v")
+screen.listen()
+screen.onkey(larger, "w")
 def c_key(): #circle and stamp
-    global c_status
-    c_status = "true"
     user.dot(size1, color2)
     #c.goto(range1, range2)
     #c.pendown()
     #c.dot(size1, color2)
-    c_status = "false"
 
 def r_key(): #rectangle
-    global r_status
-    r_status = "true"
     #r.penup()
     r.goto(range1, range3)
     user.fillcolor(color3)
@@ -333,14 +355,10 @@ def r_key(): #rectangle
     r.forward(width)
     r.penup()
     r.end_fill()
-    user.square(10)
     user.forward(8)
-    user.square(10)
-    r_status = "false"
+    bot.write("3 sides only pls", align = "center", font = ("Courier New", 10, "normal"))
 
 def s_key(): #square and "stamp"
-    global s_status
-    s_status = "true"
     #user.penup()
     #s.goto(range4, range3)
     user.pendown()
@@ -358,11 +376,8 @@ def s_key(): #square and "stamp"
     user.forward(side)
     user.end_fill()
     #user.shape("square")
-    s_status = "false"
 
 def t_key():  #triangle
-    global t_status
-    t_status = "true"
     #t.penup()
     #t.fillcolor(color5)
     user.pendown()
@@ -380,7 +395,7 @@ def t_key():  #triangle
     user.pendown()
 
 #minigames:
-def memory_game():
+def quest():
     q1.clear()
     q0.penup()
     q0.goto(-200, -200)
@@ -402,9 +417,7 @@ screen.listen()
 
 
 def one_key():
-    global one_status
     global countdown
-    one_status = "true"
     q1.penup()
     time.sleep(1)
     q1.clear()
@@ -436,10 +449,10 @@ def one_key():
     q1.color("green")
     q1.write("Press r for rectangle, t for triangle, s for a square, or c for a circle.", align = "left", font = ("Verdana", 15, "normal"))
     global membory_game
-    memory_game = "true"
+    quest = "true"
 
-if memory_game == "true":
-    memory_game()
+if quest == "true":
+    quest()
 
 def game_msg_2():
     if suppress_1 == "false":
@@ -457,11 +470,24 @@ screen.onkey(one_key, "1")
 screen.listen()
 
 def two_key():
-    q2.penup()
-    q2.write("Blind Walk", align = "center", font = ("Courier New", 16, "underline"))
+    bot.penup()
+    bot.goto(random(x_choices), random(y_choices))
+    bot.write("Tag me!", align = "center", font = ("Courier New", 16, "underline"))
     time.sleep(1)
-    q2.clear()
-    #q2.
+    q2.penup()
+    q2.goto(-200, -200)
+    q2.fillcolor("black")
+    q2.begin_fill()
+    q2.forward(200)
+    q2.left(90)
+    q2.forward(200)
+    q2.left(90)
+    q2.forward(200)
+    q2.left(90)
+    q2.forward(200)
+    q2.pendown()
+    q2.end_fill()
+    
 
 
 
@@ -480,8 +506,6 @@ screen.listen()
 
 
 def a_key(): #spikey triangles
-    global a_status 
-    a_status = "true"
     #a.write("star", align = "center", font = ("Verdana", 15, "normal"))
     time.sleep(sleep)
     #a.clear
@@ -504,8 +528,6 @@ screen.onkey(a_key, "a")
 screen.listen()
     
 def b_key(): #circular-nodes
-    global b_status 
-    b_status = "true"
     #b.write("bear", align = "center", font = ("Verdana", 15, "normal"))
     time.sleep(sleep)
     b.goto(0, -100) #head
@@ -526,8 +548,6 @@ screen.onkey(b_key, "b")
 screen.listen()
 
 def g_key(): #rectangles
-    global c_status 
-    g_status = "true"
     #g.write("Candles!", align = "center", font = ("Verdana", 15, "normal"))
     time.sleep(sleep)  #used to be time.sleep(1.5)
     g.clear()
@@ -574,8 +594,6 @@ screen.listen()
 
 
 def d_key():  #failed star again lol
-    global d_status
-    d_status = "true"
    # d.write("something, idk")
     time.sleep(sleep)
     d.color("yellow")
@@ -602,10 +620,8 @@ screen.onkey(d_key, "d")
 screen.listen()
 
 def e_key():
-    global e_status
     global color1
     global color_bank
-    e_status = "true"
     #e.write()
     time.sleep(sleep)
     #e.clear()
@@ -647,8 +663,6 @@ screen.onkey(e_key, "e")
 screen.listen()
 
 def f_key():
-    global f_status
-    f_status = "true"
     #f.write()
     time.sleep(sleep)
     f.penup()
@@ -660,8 +674,6 @@ def f_key():
     f.forward(move)
 
 def p_key():
-    global p_status 
-    p_status = "true"
    # p.write("Polka dots!", align = "center", font = ("Verdana", 15, "normal"))
     time.sleep(sleep)
     p.clear()
