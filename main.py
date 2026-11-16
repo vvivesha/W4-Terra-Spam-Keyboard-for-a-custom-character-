@@ -82,13 +82,35 @@ x_location = random.choice(x_choices)  #typo was z_location. There is no "z".
 y_choices = [20, 29, 23, 92, -91, -3, -5, -257, 283, 87, -11, -52, -220, 323, 49, -34, -34 , -116, 200]
 y_location = random.choice(y_choices)
 
+global range1
+global range2
+global range3
+global range4
+
+range0 = (-200, 200)
+range1 = random.choice(range0)
+range2 = random.choice(range0)
+range3 = random.choice(range0)
+range4 = random.choice(range0)
+
+
 #random fillcolors:
-global colors
+global color1
+global color2
+global color3
+global color4
+global color5
+global color6
 global color_bank
 global pick_color
 color_bank = ["blue", "green", "red", "purple", "white", "black", "yellow", "pink", "orange", "brown"]
 pick_color = random.choice(color_bank)
-colors = pick_color
+color1 = pick_color
+color2 = random.choice(color_bank)
+color3 = random.choice(color_bank)
+color4 = random.choice(color_bank)
+color5 = random.choice(color_bank)
+color6 = random.choice(color_bank)
 
 #random direction (turning right):
 global direction
@@ -123,20 +145,21 @@ pick_r1_number = random.choice(range(1,200))
 r1_number = pick_r1_number
 
 
+
 def c_key(): #circle
     global c_status
     c_status = "true"
     c.penup()
-    c.goto(x_location, y_location)
+    c.goto(range1, range2)
     c.pendown()
-    c.dot(r_number, colors)
+    c.dot(r_number, color2)
 
 def r_key(): #rectangle
     global r_status
     r_status = "true"
     r.penup()
-    r.goto(x_location, y_location)
-    r.fillcolor(colors)
+    r.goto(range1, range3)
+    r.fillcolor(color3)
     r.begin_fill()
     r.pendown()
     global r_number
@@ -154,15 +177,13 @@ def r_key(): #rectangle
     r.penup()
     r.end_fill()
 
-global s_range
-s_range = random.choice(range(-200,200))
 def s_key(): #square
     global s_status
     s_status = "true"
     s.penup()
-    s.goto(s_range, s_range)
+    s.goto(range4, range3)
     s.pendown()
-    s.fillcolor(colors)
+    s.fillcolor(color4)
     s.begin_fill()
     global r_number
     side = r_number
@@ -177,6 +198,8 @@ def s_key(): #square
 def t_key():
     global t_status
     t_status = "true"
+    t.penup()
+    t.fillcolor(color5)
 
 #minigames:
 def memory_game():
@@ -402,14 +425,14 @@ screen.listen()
 
 def e_key():
     global e_status
-    global colors
+    global color1
     global color_bank
     e_status = "true"
     #e.write()
     time.sleep(sleep)
     e.clear()
     e.penup()
-    e.fillcolor(colors)
+    e.fillcolor(color1)
     #e.goto(x_location, y_location)
     e.pendown()
     e.begin_fill()
@@ -423,7 +446,7 @@ def e_key():
     e.penup()
     e.end_fill()
     e.goto(x_location, y_location)
-    e.fillcolor(colors)
+    e.fillcolor(color6)
     e.begin_fill()
     e.pendown()
     e.forward(50) #hopefully a star
