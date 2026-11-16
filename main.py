@@ -93,6 +93,15 @@ range2 = random.choice(range0)
 range3 = random.choice(range0)
 range4 = random.choice(range0)
 
+global size
+global size1
+global size2
+global size3
+
+size = range(1, 200)
+size1 = random.choice(size)
+size2 = random.choice(size)
+size3 = random.choice(size)
 
 #random fillcolors:
 global color1
@@ -135,14 +144,14 @@ memory_game_script = ["Draw 3 TRIANGLES and 2 CIRCLES-- in that order.", "Draw 2
 memory_prompt = random.choice(memory_game_script)
 
 #number_randomizer:
-global r_number
-global pick_r_number
-pick_r_number = random.choice(range(1, 200))
-r_number = pick_r_number
-global r1_number
-global pick_r1_number
-pick_r1_number = random.choice(range(1,200))
-r1_number = pick_r1_number
+#global r_number
+#global pick_r_number
+#pick_r_number = random.choice(range(1, 200))
+#r_number = pick_r_number
+#global r1_number
+#global pick_r1_number
+#pick_r1_number = random.choice(range(1,200))
+#r1_number = pick_r1_number
 
 
 
@@ -152,7 +161,7 @@ def c_key(): #circle
     c.penup()
     c.goto(range1, range2)
     c.pendown()
-    c.dot(r_number, color2)
+    c.dot(size1, color2)
 
 def r_key(): #rectangle
     global r_status
@@ -162,11 +171,12 @@ def r_key(): #rectangle
     r.fillcolor(color3)
     r.begin_fill()
     r.pendown()
-    global r_number
+    #global size1
+    #global size2
     global length
     global width
-    width = r1_number
-    length = r_number
+    width = size2
+    length = size1
     r.forward(length)
     r.right(90)
     r.forward(width)
@@ -177,7 +187,7 @@ def r_key(): #rectangle
     r.penup()
     r.end_fill()
 
-def s_key(): #square
+def s_key(): #square (but it grows by 1 to its side-length bc why not)
     global s_status
     s_status = "true"
     s.penup()
@@ -185,8 +195,9 @@ def s_key(): #square
     s.pendown()
     s.fillcolor(color4)
     s.begin_fill()
-    global r_number
-    side = r_number
+    global size3
+    side = int(size3) #+= 1
+    new_side = int(side) #+= 1
     s.forward(side)
     s.right(90)
     s.forward(side)
@@ -194,6 +205,7 @@ def s_key(): #square
     s.forward(side)
     s.right(90)
     s.forward(side)
+    s.end_fill()
 
 def t_key():
     global t_status
