@@ -16,6 +16,9 @@ print("===")
 time.sleep(0.05)
 global delay
 global sleep
+word1 = input("What\'s your favorite letter? *press enter to skip these 3 questions*  ")
+word2 = input("What\'s your favorite style? ")
+word3 = input("What\'s your favorite plant? ")
 #custom = input("Would you like to customize your name?   (y/n)")
 #if custom == "y":
 
@@ -71,6 +74,7 @@ f = turtle.Turtle()
 g = turtle.Turtle()
 
 user = turtle.Turtle()
+bot = turtle.Turtle()
 
 q0.showturtle()
 q0.color("red")
@@ -158,37 +162,138 @@ memory_prompt = random.choice(memory_game_script)
 #pick_r1_number = random.choice(range(1,200))
 #r1_number = pick_r1_number
 
+#customize user's turtle:
+
+def word_1():
+    user.penup()
+    user.backward(10)
+    user.write(word1, align = "center", font = ("Imapact", size1, "underline"))
+
+def word_2():
+    user.penup()
+    user.backward(10)
+    user.write(word2, align = "center", font = ("Courier New", size2, "normal"))
+
+def word_3():
+    user.penup()
+    user.backward(10)
+    user.write(word3, align = "center", font = ("Verdana", size3, "bold"))
+
+def bg1():
+    user.color("yellow")
+    screen.bgcolor("green")
+
+def bg2(): #underwater
+    user.color("white")
+    screen.bgcolor("blue")
+    u_dots()
+    a.penup()
+    a.goto(range1, range2)
+    a.dot(15, "white")
+    a.goto(range2, range3)
+    a.dot(14, "white")
+    a.goto(range1, range4)
+    a.goto(range3, range1)
+
+def u_invisible():
+    user.clear()
+    time.sleep(0.1)
+
+def u_dots():
+    for dots in range(8):
+        user.dot(8, color5)
+        time.sleep(0.1)
+
+screen.onkey(u_invisible, "y")
+screen.listen()
+screen.onkey(u_dots, "u")
+screen.listen()
+screen.onkey(bg2, "i")
+screen.listen()
+screen.onkey(bg1, "l")
+screen.listen()
+screen.onkey(word_1, "j")
+screen.listen()
+screen.onkey(word_2, "k")
+screen.listen()
+screen.onkey(word_3, "m")
+
 user.color("blue")
 user.speed(0)
 user.width(5)
 
+bot.color("red")
+bot.speed(0.001)
+bot.width(6)
+bot.goto(-5, 5)
+
 #right
 def right():
+    bot.pendown()
     user.pendown()
     user.setheading(0)
     user.forward(20)
+    bot.setheading(0)
+    bot.left(90)
+    bot.forward(5)
+    bot.right(180)
+    bot.forward(5)
+    bot.left(90)
+    bot.forward(20)
     user.penup()
+    time.sleep(3)
+    bot.clear()
 
 #left
 def left():
+    bot.pendown()
     user.pendown()
     user.setheading(180)
     user.forward(20)
+    bot.setheading(180)
+    bot.left(90)
+    bot.forward(5)
+    bot.right(180)
+    bot.forward(5)
+    bot.left(90)
+    bot.forward(20)
     user.penup()
+    time.sleep(3)
+    bot.clear()
 
 #down
 def down():
+    bot.pendown()
     user.pendown()
     user.setheading(270)
     user.forward(20)
+    bot.setheading(270)
+    bot.left(90)
+    bot.forward(5)
+    bot.right(180)
+    bot.forward(5)
+    bot.left(90)
+    bot.forward(20)
     user.penup()
+    time.sleep(3)
+    bot.clear()
 
 #up
 def up():
+    bot.pendown()
     user.pendown()
-    user.setheadting(90)
+    user.setheading(90)
     user.forward(20)
+    bot.setheading(90)
+    bot.left(90)
+    bot.forward(5)
+    bot.right(180)
+    bot.forward(5)
+    bot.left(90)
+    bot.forward(20)
     user.penup()
+    time.sleep(3)
+    bot.clear()
 
 screen.onkey(up, "Up")
 screen.listen()
@@ -379,7 +484,7 @@ def a_key(): #spikey triangles
     a_status = "true"
     #a.write("star", align = "center", font = ("Verdana", 15, "normal"))
     time.sleep(sleep)
-    a.clear
+    #a.clear
     a.color("blue")
     a.fillcolor("green")
     a.begin_fill()
@@ -503,7 +608,7 @@ def e_key():
     e_status = "true"
     #e.write()
     time.sleep(sleep)
-    e.clear()
+    #e.clear()
     e.penup()
     e.fillcolor(color1)
     #e.goto(x_location, y_location)
