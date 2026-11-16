@@ -16,6 +16,9 @@ print("===")
 time.sleep(0.05)
 global delay
 global sleep
+#custom = input("Would you like to customize your name?   (y/n)")
+#if custom == "y":
+
 delay = input("Delay drawings?")
 if delay == "y":
     sleep = 1.5
@@ -66,6 +69,8 @@ d = turtle.Turtle()
 e = turtle.Turtle()
 f = turtle.Turtle()
 g = turtle.Turtle()
+
+user = turtle.Turtle()
 
 q0.showturtle()
 q0.color("red")
@@ -153,24 +158,61 @@ memory_prompt = random.choice(memory_game_script)
 #pick_r1_number = random.choice(range(1,200))
 #r1_number = pick_r1_number
 
+user.color("blue")
+user.speed(0)
+user.width(5)
 
+#right
+def right():
+    user.pendown()
+    user.setheading(0)
+    user.forward(20)
+    user.penup()
 
-def c_key(): #circle
+#left
+def left():
+    user.pendown()
+    user.setheading(180)
+    user.forward(20)
+    user.penup()
+
+#down
+def down():
+    user.pendown()
+    user.setheading(270)
+    user.forward(20)
+    user.penup()
+
+#up
+def up():
+    user.pendown()
+    user.setheadting(90)
+    user.forward(20)
+    user.penup()
+
+screen.onkey(up, "Up")
+screen.listen()
+screen.onkey(down, "Down")
+screen.onkey(left, "Left")
+screen.onkey(right, "Right")
+
+def c_key(): #circle and stamp
     global c_status
     c_status = "true"
-    c.penup()
-    c.goto(range1, range2)
-    c.pendown()
-    c.dot(size1, color2)
+    user.dot(size1, color2)
+    #c.goto(range1, range2)
+    #c.pendown()
+    #c.dot(size1, color2)
+    c_status = "false"
 
 def r_key(): #rectangle
     global r_status
     r_status = "true"
-    r.penup()
+    #r.penup()
     r.goto(range1, range3)
-    r.fillcolor(color3)
-    r.begin_fill()
-    r.pendown()
+    user.fillcolor(color3)
+    #r.begin_fill()
+    #r.pendown()
     #global size1
     #global size2
     global length
@@ -186,32 +228,51 @@ def r_key(): #rectangle
     r.forward(width)
     r.penup()
     r.end_fill()
+    user.square(10)
+    user.forward(8)
+    user.square(10)
+    r_status = "false"
 
-def s_key(): #square (but it grows by 1 to its side-length bc why not)
+def s_key(): #square and "stamp"
     global s_status
     s_status = "true"
-    s.penup()
-    s.goto(range4, range3)
-    s.pendown()
-    s.fillcolor(color4)
-    s.begin_fill()
+    #user.penup()
+    #s.goto(range4, range3)
+    user.pendown()
+    user.fillcolor(color4)
+    user.begin_fill()
     global size3
     side = int(size3) #+= 1
     new_side = int(side) #+= 1
-    s.forward(side)
-    s.right(90)
-    s.forward(side)
-    s.right(90)
-    s.forward(side)
-    s.right(90)
-    s.forward(side)
-    s.end_fill()
+    user.forward(side)
+    user.right(90)
+    user.forward(side)
+    user.right(90)
+    user.forward(side)
+    user.right(90)
+    user.forward(side)
+    user.end_fill()
+    #user.shape("square")
+    s_status = "false"
 
-def t_key():
+def t_key():  #triangle
     global t_status
     t_status = "true"
-    t.penup()
-    t.fillcolor(color5)
+    #t.penup()
+    #t.fillcolor(color5)
+    user.pendown()
+    user.fillcolor(color6)
+    user.begin_fill()
+    user.right(90)
+    user.forward(12)
+    user.left(135)
+    user.forward(15)
+    user.left(135)
+    user.forward(15)
+    user.end_fill()
+    user.penup()
+    user.forward(12)
+    user.pendown()
 
 #minigames:
 def memory_game():
