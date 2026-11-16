@@ -61,6 +61,7 @@ g = turtle.Turtle()
 
 user = turtle.Turtle()
 bot = turtle.Turtle()
+bot.shape("turtle")
 
 q0.showturtle()
 q0.color("red")
