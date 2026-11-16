@@ -52,15 +52,18 @@ time.sleep(2)
 import turtle
 screen = turtle.Screen()
 screen.title("(Turtle) Drawing Sandbox")
+
+#turtles:
 q0 = turtle.Turtle()
 q1 = turtle.Turtle()
 q2 = turtle.Turtle()
 
+#shape turtles
 c = turtle.Turtle()
 r = turtle.Turtle()
 s = turtle.Turtle()
-t = turtle.Turtle()
 
+t = turtle.Turtle()
 a = turtle.Turtle()
 b = turtle.Turtle()
 d = turtle.Turtle()
@@ -68,6 +71,7 @@ e = turtle.Turtle()
 f = turtle.Turtle()
 g = turtle.Turtle()
 
+#bot and user turtles (moveable)
 user = turtle.Turtle()
 bot = turtle.Turtle()
 bot.shape("turtle")
@@ -98,6 +102,7 @@ range2 = random.choice(range0)
 range3 = random.choice(range0)
 range4 = random.choice(range0)
 
+#non-negative values:
 global size
 global size1
 global size2
