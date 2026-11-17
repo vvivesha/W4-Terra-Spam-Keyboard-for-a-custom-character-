@@ -7,6 +7,8 @@ Make a Python Turtle window that people can spam on their keyboard with, and hav
 - answer a few text-based prompts, and then the Visual Window will pop up, (Don't worry! You can skip them by simply pressing the Enter button.)
 - You spawn in in the shape of an arrowhead. You have a free, red pet turtle! It even follows ya.
 # Turtle pet: 
+<img width="513" height="608" alt="td1 VS basic move" src="https://github.com/user-attachments/assets/07a1adba-185c-4a15-94ce-a774fcbfe632" />
+
 <img src="blob:chrome-untrusted://media-app/c8540293-c152-461c-9814-83559acb38d1" alt="Screenshot 2026-11-15 10.18.15 PM.png"/>
 - Use the arrow keys on your device's physical keyboard to move around!
 - You can press "i" to go underwater :>  And you'll also see some turtles!
