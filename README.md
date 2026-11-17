@@ -2,7 +2,7 @@
 The idea (11/9/26): 
 Make a Python Turtle window that people can spam on their keyboard with, and have lots of little doodles pop up for each key on the keyboard that was pressed.
 
-## The Game:
+# The Game:
 - mainly a visual game
     - can make chaotic!!
   
@@ -19,7 +19,7 @@ Make a Python Turtle window that people can spam on their keyboard with, and hav
  <img width="985" height="476" alt="d1 VS both windows" src="https://github.com/user-attachments/assets/24df7ebd-959c-427a-9cdb-5c849ce960b3" />
  
 - You spawn in in the shape of an arrowhead. You have a free, red pet turtle! It even follows ya.
-# Turtle pet: 
+#3 Turtle pet: 
 
 <img width="513" height="608" alt="td1 VS basic move" src="https://github.com/user-attachments/assets/07a1adba-185c-4a15-94ce-a774fcbfe632" />
 
@@ -32,7 +32,7 @@ Make a Python Turtle window that people can spam on their keyboard with, and hav
 - Press "r" to draw a rectangle; press "s" to draw a square. Press "c" to draw a solid, perfect circle. yipeee now you can say that you've drawn a perfect circle.
 - want to make your trail wider? Press "w"!!
     - # Note: Your pet turtle's trail will not be affected. Only your character's trail (the blue one, or if underwater, the white turtle and trail), will be subject to changes when pressing "w" or "v".
-# Water droplet:
+## Water droplet:
 
 <img width="1024" height="721" alt="td5 water" src="https://github.com/user-attachments/assets/dd7ac6ab-6530-4f7a-a019-29fb59bc5cef" />
 
@@ -52,7 +52,7 @@ Make a Python Turtle window that people can spam on their keyboard with, and hav
 
 - You can also opt-in or opt-out of slowing down/delaying the drawings. This can help counter lag, though it isn't full-proof.
 
-## How to get the game!
+# How to get the game!
 - If you already have the main.exe downloaded to your compatible device, head on over to your device's FIle Explorer application, find the file for this project (most likely findable under the "Recents" tab), and double-click to launch.
 - If you recieve a blue screen saying "Windows protected your PC", and if you still would like to play my game, find the white, underlined text that reads "More Info". Click on it, and then press "Run Anyway". 
     - Otherwise, you are still free to back out of opening this game. I hope that you try it out sooner or later, though! 
@@ -61,27 +61,27 @@ Make a Python Turtle window that people can spam on their keyboard with, and hav
     - Don't forget to screenshot to save!
 
 
-## More:
-# What even IS this??
+# More:
+## What even IS this??
 - a day's worth of Python TUrtle code. Yup, just one full day's sun-up-worth of time. I was grounded earlier in the week... :(
 
-# What is the purpose of the game?
+## What is the purpose of the game?
 - just a basic drawing sandbox! Not the best out there, but it's something!
 
-# How do I restart the game?
+## How do I restart the game?
 - If you ran this through downloading the PyInstaller main.exe as provided in this project's GitHub Release page, you should be able to close out the old one that you have open, relocate that same, downloaded file, and reopen it. It will bring you back to the start; your progress is not savable. If you want to save any drawings made, be sure to take a screenshot!
 
-# I can't see my character anymore.
+## I can't see my character anymore.
 - no worries! follow the instructions above to restart the game from the beginning, OR you can try to get creative and draw your way out of it with the available keybinds. :D 
 - precaution measures for being unable to see your character anymore include not increasing the width of your character's trail too drastically.
 
-# The visual window is too small.
+## The visual window is too small.
 - No problem! Just click the "maximize window" button. Depending on the size of your screen, the visual window should end up looking expanded. (or similar to this):
   <img width="1024" height="724" alt="td4" src="https://github.com/user-attachments/assets/daa703d1-65e1-481d-9407-966af8d64e52" />
 
-# By how much can I shrink my character's trail?
+## By how much can I shrink my character's trail?
 - By pressing "v" on your physical keyboard, you can shrink your character's trail-width all the way down to size 1!
 - there is no "size 0" for the trail's width. You would get an error/a bug, were you to somehow achieve such through this code.
 
-# Will this be recieving any updates??
+## Will this be recieving any updates??
 - I'm happy to hear that you're curious about this! Most likely, the answer is either no or not soon. Keep eyes and ears out, though!
