@@ -5,34 +5,49 @@ Make a Python Turtle window that people can spam on their keyboard with, and hav
 ## The Game:
 - mainly a visual game
     - can make chaotic!!
+  
       <img width="508" height="586" alt="td3 VS" src="https://github.com/user-attachments/assets/09684121-8957-496a-af15-92846ac4acfe" />
       
+  
       <img width="509" height="588" alt="td2 VS" src="https://github.com/user-attachments/assets/71d6fd48-9234-426e-9ea3-3e53c7f522b7" />
+      
 - answer a few text-based prompts, and then the Visual Window will pop up, (Don't worry! You can skip them by simply pressing the Enter button.)
+
   <img width="1021" height="464" alt="d2 tour of text" src="https://github.com/user-attachments/assets/9dd40f5d-ddbf-4ccf-8395-bacd13840598" />
   
+  
  <img width="985" height="476" alt="d1 VS both windows" src="https://github.com/user-attachments/assets/24df7ebd-959c-427a-9cdb-5c849ce960b3" />
+ 
 - You spawn in in the shape of an arrowhead. You have a free, red pet turtle! It even follows ya.
 # Turtle pet: 
+
 <img width="513" height="608" alt="td1 VS basic move" src="https://github.com/user-attachments/assets/07a1adba-185c-4a15-94ce-a774fcbfe632" />
+
 - Use the arrow keys on your device's physical keyboard to move around!
 - You can press "i" to go underwater :>  And you'll also see some turtles!
-<img src="blob:chrome-untrusted://media-app/63b3cc65-1229-4a4b-9466-92ffc95b1fe8" alt="Screenshot 2026-11-15 10.09.56 PM.png"/>
+  
+<img width="1024" height="724" alt="td9 water" src="https://github.com/user-attachments/assets/2c8fdb9b-25b0-448b-a1d9-364bf5185b25" />
+
 - Press 1 to see a Quest Prompt. There is no reward or punishment for fulfilling or failing at this quest. It is just inspiration for what to draw!
 - Press "r" to draw a rectangle; press "s" to draw a square. Press "c" to draw a solid, perfect circle. yipeee now you can say that you've drawn a perfect circle.
 - want to make your trail wider? Press "w"!!
     - # Note: Your pet turtle's trail will not be affected. Only your character's trail (the blue one, or if underwater, the white turtle and trail), will be subject to changes when pressing "w" or "v".
 # Water droplet:
+
 <img width="1024" height="721" alt="td5 water" src="https://github.com/user-attachments/assets/dd7ac6ab-6530-4f7a-a019-29fb59bc5cef" />
+
 - I made a larger one for an example image; however, the file type wasn't compatible to attach.  :C
 - How about a narrower trail? Just press "v", like so:
+- 
 <img width="1024" height="723" alt="td6 water" src="https://github.com/user-attachments/assets/9443e1c8-0861-44da-9008-144be78db234" />
+
 - want a drawing prompt? 
      - You're in luck!!!!!!
           - Run the game/start the game. (Follow the instructions in the section below, or navigate to the GitHub Release page for download instructions/)
           - Complete the text-prompts. (Or press Enter to skip them)
           - Press 1, and wait a second or two. Depending on your device's layout, you may need to use the horizontal scroll-bar to see all of the text written on the display screen.
           - That text is your prompt! (You can kind of see it in this screenshot (I got carried away drawing triangles and squares.)
+            
           <img width="1023" height="725" alt="td8" src="https://github.com/user-attachments/assets/59f45121-f7a7-4eab-8cae-6138f1273c0d" />
 
 - You can also opt-in or opt-out of slowing down/delaying the drawings. This can help counter lag, though it isn't full-proof.
